@@ -13,6 +13,7 @@
     --paper:#faf6ee;
     --rule:#ded2ba;
     --nbt:#b5501f;
+    --nbt-dark:#8a3c17;
   }
   body{ background:var(--paper); color:var(--ink); font-family:'DM Sans',sans-serif; }
   .headline{ font-family:'Source Serif 4', serif; }
@@ -22,6 +23,29 @@
   a.readmore{ color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:1px; }
   a.readmore:hover{ opacity:.6; }
   img{ background:#eee2cf; }
+ 
+  /* Utility bar */
+  .util-link{ color:var(--sub); }
+  .util-link:hover{ color:var(--ink); }
+  .util-dot{ color:var(--rule); }
+  .icon-btn{ width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:50%; color:var(--sub); }
+  .icon-btn:hover{ color:var(--ink); border-color:var(--ink); }
+ 
+  /* Times Internet marquee */
+  .ti-track{ display:flex; width:max-content; animation:ti-scroll 32s linear infinite; }
+  .ti-track:hover{ animation-play-state:paused; }
+  @keyframes ti-scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  .ti-card{ width:190px; flex-shrink:0; }
+  .ti-mark{ width:44px; height:44px; display:flex; align-items:center; justify-content:center; font-family:'Source Serif 4',serif; font-weight:700; font-size:17px; color:#fff; }
+  .ti-fade-l{ background:linear-gradient(90deg, var(--paper), rgba(250,246,238,0)); }
+  .ti-fade-r{ background:linear-gradient(270deg, var(--paper), rgba(250,246,238,0)); }
+ 
+  @media (prefers-reduced-motion: reduce){
+    .ti-track{ animation:none; overflow-x:auto; }
+  }
 </style>
 </head>
 <body class="antialiased">
@@ -30,13 +54,18 @@
 <header class="border-b-2" style="border-color:var(--ink);">
   <div class="max-w-[680px] mx-auto px-5 pt-8 pb-5 text-center">
     <p class="devnagari text-[15px] font-medium mb-1" style="color:var(--nbt);">नवभारत टाइम्स</p>
-    <h1 class="headline text-[34px] leading-tight font-bold tracking-tight">Navbharat Times Digest</h1>
+    <h1 class="headline text-[34px] leading-tight font-bold tracking-tight">Navbharat Times</h1>
     <p class="text-[13px] mt-2" style="color:var(--sub);">Today's top stories, handpicked for you</p>
-    <p class="text-[12px] mt-1" style="color:var(--sub);">Tuesday, September 1, 2026</p>
+    <p class="text-[12px] mt-1" style="color:var(--sub);">Tuesday, September 3, 2026</p>
   </div>
 </header>
 
+
+
 <main class="max-w-[680px] mx-auto px-5 py-10">
+
+    <!-- Personal greeting -->
+  <p class="text-[15px] mb-8" style="color:var(--sub);">Dear <span style="color:var(--ink); font-weight:600;">reader_name</span>,</p>
 
   <!-- HERO STORY -->
   <section class="mb-12">
@@ -154,10 +183,116 @@
 
 </main>
 
+
+
+
+<!-- MORE FROM TIMES INTERNET -->
+<section class="border-t rule py-10" style="background:#f3ecdd;">
+  <div class="max-w-[680px] mx-auto px-5">
+    <div class="flex items-center gap-3 mb-6">
+      <h3 class="headline text-[19px] font-semibold">More from Times Internet</h3>
+      <div class="flex-1 border-t rule"></div>
+    </div>
+  </div>
+ 
+  <div class="relative overflow-hidden">
+    <div class="ti-track">
+      <!-- set A -->
+      <a href="https://timesofindia.indiatimes.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#c8102e;">TOI</div>
+        <p class="text-[14px] font-semibold mb-1">Times of India</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">India's most-read English news source</p>
+      </a>
+      <a href="https://economictimes.indiatimes.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#00447c;">ET</div>
+        <p class="text-[14px] font-semibold mb-1">Economic Times</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">Markets, business and policy coverage</p>
+      </a>
+      <a href="https://www.cricbuzz.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#1f7a3f;">CB</div>
+        <p class="text-[14px] font-semibold mb-1">Cricbuzz</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">Live scores and cricket news</p>
+      </a>
+      <a href="https://gaana.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#c0116e;">GA</div>
+        <p class="text-[14px] font-semibold mb-1">Gaana</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">Music streaming in every language</p>
+      </a>
+      <a href="https://www.timesprime.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#8a3c17;">TP</div>
+        <p class="text-[14px] font-semibold mb-1">Times Prime</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">One membership, many premium perks</p>
+      </a>
+      <a href="https://www.dineout.co.in" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#e0663b;">DO</div>
+        <p class="text-[14px] font-semibold mb-1">Dineout</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">Table bookings and dining offers</p>
+      </a>
+      <!-- set B (duplicate for seamless loop) -->
+      <a href="https://timesofindia.indiatimes.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#c8102e;">TOI</div>
+        <p class="text-[14px] font-semibold mb-1">Times of India</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">India's most-read English news source</p>
+      </a>
+      <a href="https://economictimes.indiatimes.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#00447c;">ET</div>
+        <p class="text-[14px] font-semibold mb-1">Economic Times</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">Markets, business and policy coverage</p>
+      </a>
+      <a href="https://www.cricbuzz.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#1f7a3f;">CB</div>
+        <p class="text-[14px] font-semibold mb-1">Cricbuzz</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">Live scores and cricket news</p>
+      </a>
+      <a href="https://gaana.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#c0116e;">GA</div>
+        <p class="text-[14px] font-semibold mb-1">Gaana</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">Music streaming in every language</p>
+      </a>
+      <a href="https://www.timesprime.com" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#8a3c17;">TP</div>
+        <p class="text-[14px] font-semibold mb-1">Times Prime</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">One membership, many premium perks</p>
+      </a>
+      <a href="https://www.dineout.co.in" target="_blank" rel="noopener" class="ti-card mr-4 block border rule bg-white p-4 hover:opacity-80">
+        <div class="ti-mark mb-3" style="background:#e0663b;">DO</div>
+        <p class="text-[14px] font-semibold mb-1">Dineout</p>
+        <p class="text-[12px] leading-snug" style="color:var(--sub);">Table bookings and dining offers</p>
+      </a>
+    </div>
+    <div class="absolute inset-y-0 left-0 w-10 ti-fade-l pointer-events-none"></div>
+    <div class="absolute inset-y-0 right-0 w-10 ti-fade-r pointer-events-none"></div>
+  </div>
+</section>
+ 
 <!-- NBT Footer -->
-<!-- Placeholder — swap this block for Navbharat Times' actual footer (logo, app links, social icons, legal text) when you have it. -->
-<footer class="border-t rule">
-  <div class="max-w-[680px] mx-auto px-5 py-8 text-center">
+<footer class="border-t-2" style="border-color:var(--ink);">
+  <div class="max-w-[680px] mx-auto px-5 py-10 text-center">
+ 
+    <p class="devnagari text-[14px] font-medium mb-4" style="color:var(--nbt);">नवभारत टाइम्स</p>
+ 
+    <!-- App links -->
+    <div class="flex items-center justify-center gap-3 mb-6">
+      <a href="https://play.google.com/store/apps/details?id=com.nbt.reader&hl=en_IN" target="_blank" rel="noopener" class="text-[12px] font-semibold px-4 py-2 border" style="border-color:var(--ink); color:var(--ink);">Get it on Play Store</a>
+      <a href="https://apps.apple.com/in/app/navbharat-times-hindi-news/id656093141" target="_blank" rel="noopener" class="text-[12px] font-semibold px-4 py-2 border" style="border-color:var(--ink); color:var(--ink);">Download on App Store</a>
+    </div>
+ 
+    <!-- Social icons -->
+    <div class="flex items-center justify-center gap-3 mb-6">
+      <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="icon-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.6 1.6-1.6h1.7V3.2C16.5 3.1 15.4 3 14.2 3c-2.6 0-4.4 1.6-4.4 4.5v2.3H7v3.2h2.8V21h3.7z"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="X (Twitter)" class="icon-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 3H22l-7.6 8.7L23 21h-6.9l-5.4-6.6L4.4 21H1.3l8.1-9.3L1 3h7.1l4.9 6.1L18.9 3z"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="icon-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" aria-label="YouTube" class="icon-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.8-1.7C18 5.2 12 5.2 12 5.2s-6 0-7.8.4c-.9.2-1.6.8-1.8 1.7C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.9.9 1.5 1.8 1.7 1.8.4 7.8.4 7.8.4s6 0 7.8-.4c.9-.2 1.6-.8 1.8-1.7.4-1.5.4-4.7.4-4.7zM10 15.2V8.8l5.5 3.2-5.5 3.2z"/></svg>
+      </a>
+    </div>
+ 
     <p class="text-[13px] mb-3" style="color:var(--sub);">You're receiving this because you subscribed to the Navbharat Times Digest.</p>
     <div class="flex items-center justify-center gap-4 text-[12px]" style="color:var(--sub);">
       <a href="#" class="underline">Privacy policy</a>
@@ -165,10 +300,13 @@
       <a href="#" class="underline">Terms of use</a>
       <span>&middot;</span>
       <a href="#" class="underline">Contact us</a>
+      <span>&middot;</span>
+      <a href="#" class="underline" style="color:var(--nbt);">Unsubscribe</a>
     </div>
     <p class="text-[11px] mt-5" style="color:var(--sub);">&copy; 2026 Times Internet Limited. All rights reserved.</p>
   </div>
 </footer>
-
+ 
 </body>
 </html>
+ 
