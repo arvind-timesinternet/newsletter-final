@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Newsletters - Recommendation Engine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Source+Serif+4:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#e4e2de",
+                      "primary": "#000000",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#fcf9f4",
+                      "on-primary-fixed-variant": "#474747",
+                      "on-surface": "#1c1c19",
+                      "on-primary-fixed": "#1b1b1b",
+                      "primary-fixed": "#e2e2e2",
+                      "outline": "#7e7576",
+                      "surface-container-high": "#ebe8e3",
+                      "surface-dim": "#dcdad5",
+                      "surface-variant": "#e5e2dd",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#c6c6c6",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "surface": "#fcf9f4",
+                      "on-tertiary-fixed-variant": "#464747",
+                      "tertiary-container": "#1b1c1c",
+                      "on-surface-variant": "#4c4546",
+                      "inverse-surface": "#31302d",
+                      "on-primary-container": "#848484",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#c7c6c6",
+                      "surface-container-highest": "#e5e2dd",
+                      "on-secondary-fixed-variant": "#474744",
+                      "on-tertiary-container": "#848484",
+                      "inverse-on-surface": "#f3f0eb",
+                      "on-secondary": "#ffffff",
+                      "background": "#fcf9f4",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#1b1b1b",
+                      "surface-container": "#f1ede8",
+                      "on-background": "#1c1c19",
+                      "on-secondary-fixed": "#1b1c1a",
+                      "on-secondary-container": "#636360",
+                      "secondary": "#5e5e5c",
+                      "secondary-container": "#e1dfdc",
+                      "surface-tint": "#5e5e5e",
+                      "tertiary": "#000000",
+                      "on-tertiary-fixed": "#1b1c1c",
+                      "outline-variant": "#cfc4c5",
+                      "secondary-fixed-dim": "#c8c6c3",
+                      "surface-container-low": "#f6f3ee",
+                      "tertiary-fixed": "#e4e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "stack-sm": "16px",
+                      "container-max": "1280px",
+                      "stack-md": "32px",
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "stack-lg": "64px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "DM Sans"
+                      ],
+                      "body-lg": [
+                              "\"Source Serif 4\""
+                      ],
+                      "headline-md": [
+                              "DM Sans"
+                      ],
+                      "label-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "DM Sans"
+                      ],
+                      "body-md": [
+                              "\"Source Serif 4\""
+                      ],
+                      "display": [
+                              "DM Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Component -->
+<header class="bg-background border-b border-outline-variant w-full top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-display text-headline-md text-primary tracking-tight" href="#">Recommendation Engine</a>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="font-label-md text-label-md uppercase tracking-wider text-secondary hover:text-primary transition-colors hover:opacity-85" href="#">Features</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold border-b-2 border-primary pb-1 scale-95 transition-transform duration-150" href="#">Publish</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md uppercase tracking-wider hover:opacity-85 transition-opacity">Subscribe</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full flex">
+<!-- Left Sidebar Filter -->
+<aside class="hidden md:flex md:w-64 bg-primary text-on-primary flex-col p-stack-lg gap-stack-md sticky top-0 h-screen">
+<h3 class="font-headline-md text-headline-md text-on-primary mb-4">Filter</h3>
+<nav class="flex flex-col gap-4">
+<button class="filter-btn active font-label-md text-label-md uppercase tracking-wider text-on-primary hover:bg-on-primary hover:text-primary transition-colors px-4 py-2 rounded text-left" data-filter="all">All</button>
+<button class="filter-btn font-label-md text-label-md uppercase tracking-wider text-on-primary/80 hover:bg-on-primary hover:text-primary transition-colors px-4 py-2 rounded text-left" data-filter="technology">Technology</button>
+<button class="filter-btn font-label-md text-label-md uppercase tracking-wider text-on-primary/80 hover:bg-on-primary hover:text-primary transition-colors px-4 py-2 rounded text-left" data-filter="design">Design</button>
+<button class="filter-btn font-label-md text-label-md uppercase tracking-wider text-on-primary/80 hover:bg-on-primary hover:text-primary transition-colors px-4 py-2 rounded text-left" data-filter="culture">Culture</button>
+<button class="filter-btn font-label-md text-label-md uppercase tracking-wider text-on-primary/80 hover:bg-on-primary hover:text-primary transition-colors px-4 py-2 rounded text-left" data-filter="business">Business</button>
+<button class="filter-btn font-label-md text-label-md uppercase tracking-wider text-on-primary/80 hover:bg-on-primary hover:text-primary transition-colors px-4 py-2 rounded text-left" data-filter="science">Science</button>
+</nav>
+</aside>
+
+<!-- Main Content -->
+<div class="flex-grow max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col gap-stack-lg w-full">
+<!-- Header Section -->
+<section class="flex flex-col gap-stack-sm items-center text-center max-w-3xl mx-auto">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Newsletters</h1>
+<p class="font-body-lg text-body-lg text-secondary">Curated insights delivered directly to your inbox. Explore our archive of thought-provoking issues.</p>
+</section>
+<!-- Newsletters Grid (Bento/Magazine Style) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured Newsletter (Spans 8 cols) -->
+<article class="newsletter-card col-span-1 md:col-span-8 bg-surface-bright border border-primary p-stack-md flex flex-col gap-stack-sm group hover:bg-black hover:text-on-primary transition-colors duration-300" data-category="design">
+<div class="flex justify-between items-center border-b border-outline-variant pb-2 group-hover:border-on-primary/30 transition-colors">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary group-hover:text-on-primary/70">Issue No. 42</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary group-hover:text-on-primary/70">Oct 24, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Design</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary group-hover:text-on-primary transition-colors">Why AI Could Be Dangerous for Humans</h2>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-full bg-on-primary/20 text-primary group-hover:bg-on-primary/40 flex items-center justify-center text-xs font-bold">
+SA
+</div>
+<span class="font-body-md text-secondary group-hover:text-on-primary/70">Sarah Anderson • AI Research Analyst</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant group-hover:text-on-primary/80 line-clamp-3">AI is becoming more powerful, autonomous, and deeply integrated into everyday life. While it offers enormous benefits, experts also warn about the risks of developing and deploying AI without proper safeguards.</p>
+<div class="mt-auto pt-stack-sm">
+<button class="bg-primary text-on-primary px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider group-hover:bg-on-primary group-hover:text-primary transition-colors" onclick="window.location.href='newlettercard.html'">Read More</button>
+</div>
+</article>
+<!-- Secondary Newsletter (Spans 4 cols) -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="design">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 41</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Oct 17, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Design</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">Typography as Texture</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">EM</div>
+<span class="font-body-md text-secondary">Emma Moore</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-4">Moving beyond legibility, we examine how dense typographic lockups are being used to create visual texture reminiscent of brutalist print design, challenging standard conventions of readability.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Standard Newsletter Card 1 -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="design">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 40</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Oct 10, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Design</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">The Revival of Skeuomorphism</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">MC</div>
+<span class="font-body-md text-secondary">Michael Chen</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">A subtle return to tactile interfaces. We analyze the shift from flat design towards hyper-realistic, material-driven digital experiences.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Standard Newsletter Card 2 -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="technology">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 39</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Oct 03, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Technology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">Algorithmic Curation</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">DP</div>
+<span class="font-body-md text-secondary">David Park</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Balancing human editorial insight with machine learning. How publishers are navigating the fine line between personalization and echo chambers.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Standard Newsletter Card 3 -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="culture">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 38</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Sep 26, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Culture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">Monochrome Systems</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">LR</div>
+<span class="font-body-md text-secondary">Lisa Rodriguez</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Designing without color. A deep dive into relying entirely on typography, scale, and layout to convey hierarchy and emotion.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Standard Newsletter Card 4 - Business -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="business">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 37</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Sep 19, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Business</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">Digital Transformation Era</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">JW</div>
+<span class="font-body-md text-secondary">John Williams</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">The strategic implications of digital-first business models. Case studies from leading companies navigating the post-pandemic digital landscape.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Standard Newsletter Card 5 - Science -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="science">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 36</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Sep 12, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Science</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">Quantum Computing Breakthroughs</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">RS</div>
+<span class="font-body-md text-secondary">Rachel Singh</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Exploring the latest developments in quantum computing and their potential applications in solving real-world problems.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Standard Newsletter Card 6 - Technology -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="technology">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 35</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Sep 05, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Technology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">AI-Driven UX Design</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">NK</div>
+<span class="font-body-md text-secondary">Nina Kumar</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">How artificial intelligence is revolutionizing user experience design. From predictive interfaces to adaptive layouts that evolve with user behavior.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Standard Newsletter Card 7 - Culture -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="culture">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 34</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Aug 29, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Culture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">The Metaverse's Cultural Impact</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">TJ</div>
+<span class="font-body-md text-secondary">Thomas Johnson</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">How virtual worlds are reshaping identity, community, and creative expression in the digital age.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Standard Newsletter Card 8 - Business -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="business">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 33</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Aug 22, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Business</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">The Future of Remote Work</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">KB</div>
+<span class="font-body-md text-secondary">Karen Brown</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Decentralized workforces, flexible schedules, and the evolving relationship between companies and employees in 2024 and beyond.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Standard Newsletter Card 9 - Science -->
+<article class="newsletter-card col-span-1 md:col-span-4 border-t border-outline-variant py-stack-md flex flex-col gap-stack-sm" data-category="science">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Issue No. 32</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Aug 15, 2024</span>
+</div>
+<div class="flex gap-2 mb-2">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded uppercase tracking-wider">Science</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-2xl">Biotech Innovation Summit</h3>
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold">AZ</div>
+<span class="font-body-md text-secondary">Amanda Zhang</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Revolutionary advances in biotechnology and genetic engineering. Exploring CRISPR, gene therapy, and personalized medicine.</p>
+<div class="mt-auto pt-4">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b border-primary hover:opacity-70 transition-opacity pb-1 inline-flex items-center gap-2" href="newlettercard.html" onclick="event.preventDefault(); window.location.href='newlettercard.html'">Explore <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+</section>
+<!-- Newsletter Subscription Block (Magazine Style) -->
+<section class="mt-stack-lg border-t border-b border-primary py-stack-lg flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-bright">
+<div class="max-w-xl text-center md:text-left">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Join the Conversation</h3>
+<p class="font-body-md text-body-md text-secondary">Subscribe to receive a weekly dispatch of editorial insights, design critiques, and cultural commentary.</p>
+</div>
+<form class="flex w-full max-w-md gap-2" onsubmit="event.preventDefault();">
+<input class="w-full bg-transparent border-b border-primary border-x-0 border-t-0 focus:ring-0 focus:border-b-2 font-body-md placeholder:font-body-md placeholder:text-secondary placeholder:italic pb-2" placeholder="Email Address" required="" type="email"/>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-md text-label-md uppercase tracking-wider hover:opacity-85 transition-opacity whitespace-nowrap" type="submit">Submit</button>
+</form>
+</section>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-background border-t border-outline-variant w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto gap-stack-sm">
+<div class="font-display text-label-md font-bold text-primary">Recommendation Engine</div>
+<div class="font-body-md text-body-md text-secondary">© 2024 Recommendation Engine. All rights reserved.</div>
+<nav class="flex gap-gutter">
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors opacity-100 hover:opacity-80" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors opacity-100 hover:opacity-80" href="#">Terms</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors opacity-100 hover:opacity-80" href="#">Contact</a>
+</nav>
+</div>
+</footer>
+
+<script>
+  // Newsletter Filter Functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const newsletterCards = document.querySelectorAll('.newsletter-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filterValue = this.getAttribute('data-filter');
+      
+      // Update active button styling
+      filterButtons.forEach(btn => {
+        btn.classList.remove('bg-on-primary', 'text-primary');
+        btn.classList.add('text-on-primary/80');
+      });
+      
+      this.classList.remove('text-on-primary/80');
+      this.classList.add('bg-on-primary', 'text-primary');
+      
+      // Filter newsletter cards
+      newsletterCards.forEach(card => {
+        if (filterValue === 'all') {
+          card.style.display = 'flex';
+        } else {
+          const cardCategory = card.getAttribute('data-category');
+          if (cardCategory === filterValue) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+</script>
+</body></html>
